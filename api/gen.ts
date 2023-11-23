@@ -6,6 +6,7 @@ export default (req: NowRequest, res: NowResponse) => {
     const ctx = canvas.getContext('2d')
     ctx.font = '30px Impact'
     ctx.fillText('Awesome!', 50, 100)
-    res.send(canvas.toBuffer() )
+    res.setHeader('Content-Type', 'image/png')
+    res.send(canvas.toBuffer())
     // return res.json({ name: 'John', email: 'john@example.com', buffer: });
 }
